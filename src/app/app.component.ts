@@ -32,6 +32,8 @@ export class AppComponent implements OnInit {
     localStorage.setItem('tasks', JSON.stringify(this.tasks));
   }
 
+  //when clicked on 'Edit' on task.component, event will trigger to update toEdit
+  //toEdit will then be used in addTodDo method to findIndex
   editTodo(todo: Todo) {
     this.onEdit = true;
     this.toEdit = todo;
