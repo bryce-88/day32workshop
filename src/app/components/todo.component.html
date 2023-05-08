@@ -1,0 +1,32 @@
+
+<h1>To Do List</h1>
+
+<form [formGroup]="form" (ngSubmit)="addTodo()">
+    <table>
+        <tr>
+            <td>
+                <label>Description: </label>
+                <input type="text" formControlName="description">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Priority: </label>
+                <input type="radio" formControlName="priority" value="hi">High
+                <input type="radio" formControlName="priority" value="me">Medium
+                <input type="radio" formControlName="priority" value="lo">Low
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Due: </label>
+                <input type="date" formControlName="dueDate">
+            </td>
+        </tr>
+        <tr>
+            <button type="submit" [disabled]="invalid()">Add</button>
+        </tr>
+    </table>
+
+
+</form>

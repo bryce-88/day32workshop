@@ -1,0 +1,25 @@
+
+<div *ngIf="tasks.length >0; else nothing">
+    <h1>Tasks</h1>
+    <table *ngFor="let t of tasks">
+        <tr>
+            <td>
+                {{t.description}}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                {{t.priority}}
+            </td>
+            <td>
+                {{t.dueDate}}
+            </td>
+        </tr>
+        <button type="button" (click)="onEdit(t)">Edit</button>
+        <button type="button" (click)="onDelete(t)">Remove</button>
+    </table>
+</div>
+
+<ng-template #nothing>
+    You have nothing to do today
+</ng-template>
